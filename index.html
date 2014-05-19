@@ -1,362 +1,331 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ибоши прототип</title>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Ибоши прототип</title>
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
- <style>
-	#sortable { list-style-type: none; margin: 0; padding: 0; width: 100%; }
-	.ui-state-highlight { height: 100px; background-color: white; border: 2px dashed red; width: 100%; }
-</style>
-  </head>
-  <body>
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<style>
+			.sortable { list-style-type: none; margin: 0; padding: 0; width: 100%; }
+			.ui-state-highlight { height: 100px; background-color: white; border: 2px dashed red; width: 100%; }
+			.ui-sortable-helper, .ui-draggable-dragging { border: 2px dotted green; }
+		</style>
+	</head>
+<body>
 
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="mynav">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Ебашь сайты!</a>
-    </div>
+	<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">Ебашь сайты!</a>
+		</div>
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li>
+					<form class="navbar-form navbar-left" role="form"> <!-- dummy -->
+						<button type="button" class="btn btn-default">Ондо</button>
+						<button type="button" class="btn btn-default">Редо</button>
+						<a href="http://dibikhin.kd.io/sb" target="_blank">
+						<!-- <a href="file:///C:/Users/Roman/My%20Projects/splinterbike/2index.html" target="_blank"> -->
+							<button type="button" class="btn btn-default">Опубликовать</button></a>
+					</form>		
+				</li>	
+			</ul>
+			<ul class="nav navbar-nav navbar-right">  
+				<li>
+					<form class="navbar-form navbar-left" role="form">
+						<div class="form-group">
+						<input type="text" class="form-control" placeholder="Логин">
+						<input type="password" class="form-control" placeholder="Пароль">
+						</div>
+						<button type="button" class="btn btn-default">Войти</button> <!-- submit? -->
+					</form>
+				</li>
+				<li><a href="#">Зарегистироваться</a></li>
+			</ul>
+		</div><!-- /.navbar-collapse -->
+	</div><!-- /.container-fluid -->
+</nav> 
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-		<li>
-				<form class="navbar-form navbar-left" role="form"> <!-- dummy -->
-			<button type="button" class="btn btn-default">Ондо</button>
-        <button type="button" class="btn btn-default">Редо</button>
-		    <a href="http://dibikhin.kd.io/sb/2index" target="_blank">
-			<!-- <a href="file:///C:/Users/Roman/My%20Projects/ebashy/2index.html" target="_blank"> -->
-			<button type="button" class="btn btn-default">Опубликовать</button></li></a>
-		  </form>			
-      </ul>
-      <ul class="nav navbar-nav navbar-right">        
-			<li>
-				<form class="navbar-form navbar-left" role="form">
-			<div class="form-group">
-			  <input type="text" class="form-control" placeholder="Логин">
-			  <input type="password" class="form-control" placeholder="Пароль">
+
+<!-- Splinterbyke site-->
+
+<div class="sortable" style="margin-top: 50px;">
+
+	<!-- Navigation -->
+	<div class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0px;">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"><img src="img/logo_cut1.jpg"></a>
 			</div>
-			<button type="submit" class="btn btn-default">Войти</button>
-		  </form>
-			</li>
-			<li><a href="#">Зарегистироваться</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>    
+			<div class="container">
+				<div class="row clearfix">
+					<div class="col-md-2 column"></div>
+					<div class="col-md-6 column">
+						<ul class="nav navbar-nav navbar-right" style="font-size: 20px;letter-spacing: 6px;">
+							<li style="padding: 10px;"><a href="#gallery"><strong>GALLERY</strong></a></li>
+							<li style="padding: 10px;"><a href="#press"><strong>PRESS</strong></a></li>
+							<li style="padding: 10px;"><a href="#contacts"><strong>CONTACTS</strong></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> <!-- Navigation ends -->
 
+	<!-- Carousel -->
+	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="margin-bottom: 0px;">
+		<ol class="carousel-indicators">
+			<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+			<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+			<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+		</ol>
+		<div class="carousel-inner">
+			<div class="item active">
+				<img src="img/perspective.jpg" alt="..." style="max-width: 100%;"></div>
+			<div class="item">
+				<img src="img/handlebar.jpg" alt="..." style="max-width: 100%;"></div>
+			<div class="item">
+				<img src="img/side.jpg" alt="..." style="max-width: 100%;"></div>
+		</div>
+	</div> <!-- Carousel ends-->
 
-<!-- Splinterbyke -->
-
-
-<!-- Navigation -->
-<div contenteditable="true" class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0px;margin-top: 50px;">
-  <div class="container">
-
-	<div class="navbar-header">
-	  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-		<span class="sr-only">Toggle navigation</span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-	  </button>
-	  <a class="navbar-brand" href="#"><img src="img/logo_cut1.jpg"></a>
+	<!-- No bolts -->
+	<div class="container" style="margin-top: 40px">
+		<div class="row clearfix">
+			<div class="col-md-2 column"></div>
+			<div class="col-md-8 column draggable">
+				<h1 class="not-draggable">No bolts or screws, just wood and glues!</h1>
+				<p class="not-draggable">
+					The SplinterBike project came about after a&nbsp;casual &pound;1&nbsp;bet turned serious. 
+					Inspiration came from many areas but the most significant was the influence of&nbsp;the carbon-fibre 
+					Lotus 108 time trial bicycle designed by&nbsp;fellow Norfolk designer Mike Burrows and made by&nbsp;the Norfolk based 
+					Lotus car manufacturer.</p>
+				<p class="not-draggable">
+					The challenge was to&nbsp;design and build a&nbsp;100% wooden bicycle. 
+					<em>&laquo;No&nbsp;bolts or&nbsp;screws, just wood and glues&raquo;</em> were the rules of&nbsp;engagement. 
+					What developed was the SplinterBike, creating a&nbsp;new type of&nbsp;human powered vehicle... <em>the Plicycle</em>.</p>
+			</div>
+			<div class="col-md-2 column"></div>
+		</div>
 	</div>
 
-	<div class="container">
+	<!-- Gallery -->
+	<div class="container" id="gallery" style="margin-top: 10px;"> 
 		<div class="row clearfix">
 			<div class="col-md-2 column">
 			</div>
-			<div class="col-md-6 column">
-			  <ul class="nav navbar-nav navbar-right" style="font-size: 20px;letter-spacing: 6px;">
-				<li style="padding: 10px;"><a href="#gallery"><strong>GALLERY</strong></a></li>
-				<li style="padding: 10px;"><a href="#press"><strong>PRESS</strong></a></li>
-				<li style="padding: 10px;"><a href="#contacts"><strong>CONTACTS</strong></a></li>
-			  </ul>
-			</div>
-		</div>
-	</div>
-	</div>
-</div>
-
-<div contenteditable="true" style="margin-bottom: 0px;">
-	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-		<!-- Indicators -->
-		<ol class="carousel-indicators">
-		<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-		<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-		<li data-target="#carousel-example-generic" data-slide-to="2"></li>
-		</ol>
-
-	<!-- Wrapper for slides -->
-	<div class="carousel-inner">
-		<div class="item active">
-		<img src="img/side.jpg" alt="..." style="max-width: 100%;">
-		</div>
-		<div class="item">
-		<img src="img/handlebar.jpg" alt="..." style="max-width: 100%;">
-		</div>
-		<div class="item">
-		<img src="img/perspective.jpg" alt="..." style="max-width: 100%;">
-		</div>
-	</div>
-	</div>
-</div>
-		
-
-<div contenteditable="true" class="container" style="margin-top: 40px">
-	<div class="row clearfix">
-		<div class="col-md-2 column">
-		</div>
-		<div class="col-md-8 column">
-			<h1>No bolts or screws, just wood and glues!</h1>
-			<p>
-				The SplinterBike project came about after a&nbsp;casual &pound;1&nbsp;bet turned serious. 
-				Inspiration came from many areas but the most significant was the influence of&nbsp;the carbon-fibre 
-				Lotus 108 time trial bicycle designed by&nbsp;fellow Norfolk designer Mike Burrows and made by&nbsp;the Norfolk based 
-				Lotus car manufacturer.
-			</p>
-			<p>The challenge was to&nbsp;design and build a&nbsp;100% wooden bicycle. 
-				<em>&laquo;No&nbsp;bolts or&nbsp;screws, just wood and glues&raquo;</em> were the rules of&nbsp;engagement. 
-				What developed was the SplinterBike, creating a&nbsp;new type of&nbsp;human powered vehicle... <em>the Plicycle</em>.
-			</p>
-		</div>
-		<div class="col-md-2 column">
-		</div>
-	</div>
-</div>
-
-<!-- <hr style="width: 30%;margin-top: 20px;"> -->
-
-<div contenteditable="true" class="container" id="gallery">
-	<div class="row clearfix">
-		<div class="col-md-2 column">
-		</div>
-		<div class="col-md-8 column">
-			<h1>Look at my gallery</h1>
-		</div>
-		<div class="col-md-2 column">
-		</div>
-	</div>
-</div>
-
-<div contenteditable="true" class="container" style="margin-top: 10px;">
-	<div class="row clearfix">
-		<div class="col-md-2">
-		</div>
-		<div class="col-md-2">
-			<a href="#" class="thumbnail">
-				<img src="img/gal/09.jpg" alt="..." >
-			</a>
-			<a href="#" class="thumbnail">
-				<img src="img/gal/10.jpg" alt="..." >
-			</a>
-		</div>
-		<div class="col-md-2">
-			<a href="#" class="thumbnail">
-				<img src="img/gal/07.jpg" alt="..." >
-			</a>
-			<a href="#" class="thumbnail">
-				<img src="img/gal/05.jpg" alt="..." >
-			</a>
-			<a href="#" class="thumbnail">
-				<img src="img/gal/03.jpg" alt="..." >
-			</a>
-		</div>
-		<div class="col-md-2">
-			<a href="#" class="thumbnail">
-				<img src="img/gal/04.jpg" alt="..." >
-			</a>
-			<a href="#" class="thumbnail">
-				<img src="img/gal/11.jpg" alt="..." >
-			</a>
-		</div>
-		<div class="col-md-2">
-			<a href="#" class="thumbnail">
-				<img src="img/gal/12.jpg" alt="..." >
-			</a>
-			<a href="#" class="thumbnail">
-				<img src="img/gal/06.jpg" alt="..." >
-			</a>
-		</div>
-	</div>
-</div>
-
-<div id="sortable">
-	<div class="ui-state-default">
-		<div class="container" style="margin-top: 20px">
-			<div class="row clearfix ui-widget-content">
-				<div class="col-md-2 column">
-				</div>
-				<div class="col-md-8 column draggable ui-widget-header">
-					<h1 class="nodr editme" >Around 1000 hours to&nbsp;design and construct</h1>
-					<p class="nodr editme" >The SplinterBike forced me&nbsp;to&nbsp;employ timbers previously unused in&nbsp;my&nbsp;workshop 
-						such as&nbsp;Lignum Vitae, a&nbsp;naturally self lubricating hardwood, which is&nbsp;included for bushings 
-						to&nbsp;minimise friction where one component turns in&nbsp;an&nbsp;opposing direction to&nbsp;another.</p>
-					<p class="nodr editme" id="zxcv" >Many years of&nbsp;woodworking experience have enabled me&nbsp;to&nbsp;make a&nbsp;bet 
-						with a&nbsp;friend and end up&nbsp;developing something that will ultimately set a&nbsp;land speed record
-						for wooden bicycles. It&rsquo;s a&nbsp;testament to&nbsp;the versatility and strength of&nbsp;one of&nbsp;mankind&rsquo;s 
-						oldest available materials... and of&nbsp;course, modern glue technology.</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="ui-state-default">
-		<div id="press" contenteditable="true" class="container" style="margin-top: 20px;">
-			<div class="row clearfix">
-				<div class="col-md-2 column">
-				</div>
-				<div class="col-md-8 column">
-					<h1>Listen to press noise</h1>
-				</div>
-				<div class="col-md-2 column">
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-2">
-				</div>
-				<div class="col-md-4">
-						<div class="thumbnail">
-							<a href="http://www.treehugger.com/bikes/100-wooden-bike-primed-to-set-land-speed-record.html">
-								<img src="img/press/th123.jpg" alt="..." style="width: 100%;">
-							<div class="caption">
-								<h3>100% Wooden Bike Sets Land Speed Record</h3>
-								<p>The SplinterBike is a bit of an engineering marvel. 
-									The bike is made completely from wood; no screws, bolts, metal, plastic or rubber. 
-									Just wood, and most of it reclaimed!...</p> 
-								<footer>— Jerry James Stone, treehugger.com</footer>
-							</div>
-							</a>
-						</div>
-						<div class="thumbnail">
-							<a href="http://articles.cnn.com/2011-05-30/tech/eco.wooden.bike_1_wooden-bike-michael-thompson-gear?_s=PM:TECH">
-								<img src="img/press/cnn123.jpg" alt="..." style="width: 100%;">
-							<div class="caption">
-								<h3>Wooden &rsquo;SplinterBike&rsquo; aims to&nbsp;set world speed record</h3>
-								<p>A&nbsp;wooden bicycle sounds almost as&nbsp;useful as&nbsp;a&nbsp;square wheel, 
-									but British craftsman Michael Thompson has not only made...</p> 
-								<footer>— Dean Irvine, CNN</footer>
-							</div>
-							</a>
-						</div>
-				</div>
-				<div class="col-md-4">
-						<div class="thumbnail">
-							<a href="http://www.bbc.co.uk/news/uk-england-norfolk-16578622">
-								<img src="img/press/bbc123.jpg" alt="..." style="width: 100%;">
-							<div class="caption">
-								<h3>Wooden bike distance record attempt by Norfolk joiner</h3>
-								<p>A joiner from Norfolk who created the world's fastest bicycle made entirely 
-										of wood has revealed plans for a new record attempt...
-								</p>
-								<footer>— David Keller. BBC News, Norfolk</footer>
-							</div>
-							</a>
-						</div>
-						<div class="thumbnail">
-							<a href="http://www.theguardian.com/environment/bike-blog/2011/apr/27/splinterbike-wooden-bike-engineering-marvel">
-								<img src="img/press/theg123.jpg" alt="..." style="width: 100%;">
-							<div class="caption">
-								<h3>The wooden bike&nbsp;&mdash; an&nbsp;engineering marvel, a&nbsp;recipe for saddle sore</h3>
-								<p>The SplinterBike has no&nbsp;screws, bolts, metal, plastic or&nbsp;rubber. 
-									It&nbsp;has one gear and no&nbsp;brakes, and it&rsquo;s going for a&nbsp;speed record</p>
-								<footer>— Kirsty Ennew, The Guardian</footer>
-							</div>
-							</a>
-						</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div contenteditable="true" class="container" style="margin-top: 20px">
-	<div class="row clearfix">
-		<div class="col-md-2 column">
-		</div>
-		<div class="col-md-8 column">
-			<h1>SplinterBikeQuantum reveal</h1>
-			<p>SBQ has various improvements over its predecessors, although there is&nbsp;no&nbsp;doubting that it&nbsp;comes 
-				from the same stable. Many a&nbsp;hard lesson was learnt during the 1,600 hours of&nbsp;designing, 
-				prototyping, building and testing of&nbsp;last year&rsquo;s bikes. Mostly issues concerning durability because 
-				it&nbsp;soon became apparent that the chosen materials were not the most suitable for this type of&nbsp;vehicle. 
-				However, itʼs great fun to&nbsp;see just how far they can be&nbsp;pushed, albeit in&nbsp;the wrong direction?</p>
-		</div>
-		<div class="col-md-2 column">
-		</div>
-	</div>
-</div>
-
-<hr class="draggable" style="margin-top: 30px;">
-
-<!-- <footer contenteditable="true" class="draggable" style="margin-top: 20px;"> -->
-	<div id="contacts" contenteditable="true" class="container" style="margin-top: 20px;">
-		<div class="row  ui-widget-content">
-			<div class="col-md-2 column draggable ui-widget-header">
-				<address>
-					<strong>Michael Thompson</strong><br>
-					Thompson Joinery<br>
-					Potter Heigham<br>
-					Norfolk, England<br>
-					NR29 5JB<br>
-					<abbr title="UK phone">UK:</abbr> 07768 772366<br>
-					<abbr title="International phone">INT:</abbr> +44 7768 772366<br>
-					<a href="mailto:SplinterBike@hotmail.co.uk">SplinterBike@hotmail.co.uk</a>
-				</address>
-			</div>
-			<div class="col-md-8 column" style="padding-top: 40px; padding-left: 50px;">
-				<a href="http://www.bamnuttall.co.uk/"><img src="img\logo\bam_nuttall.jpg" alt="..."></a>
-				<a href="http://www.sowandso.com/"><img src="img\logo\sow_and_so.jpg" alt="..."></a>
-				<a href="http://www.bostik.co.uk/"><img src="img\logo\bostik.jpg" alt="..."></a>
-				<a href="http://www.skjenergy.com/projects/"><img src="img\logo\energy_strat.jpg" alt="..."></a>
-				<a href="http://www.starfishlimited.co.uk/"><img src="img\logo\starfish.jpg" alt="..."></a>
-				<a href="http://cheeky-monkey.co/"><img src="img\logo\cheeky_monkey.jpg" alt="..."></a>
+			<div class="col-md-8 column">
+				<h1>Look at my gallery</h1>
 			</div>
 			<div class="col-md-2 column">
-				<p class="text-right" style="padding-top: 140px;">Designed&nbsp;by&nbsp;<a href="https://github.com/dibikhin">Roman&nbsp;Dibikhin</a></p>
+			</div>
+		</div>
+		<div class="row clearfix">
+			<div class="col-md-2">
+			</div>
+			<div class="col-md-2">
+				<a href="#" class="thumbnail">
+					<img src="img/gal/09.jpg" alt="..." ></a>
+				<a href="#" class="thumbnail">
+					<img src="img/gal/10.jpg" alt="..." ></a>
+			</div>
+			<div class="col-md-2">
+				<a href="#" class="thumbnail">
+					<img src="img/gal/07.jpg" alt="..." ></a>
+				<a href="#" class="thumbnail">
+					<img src="img/gal/05.jpg" alt="..." ></a>
+				<a href="#" class="thumbnail">
+					<img src="img/gal/03.jpg" alt="..." ></a>
+			</div>
+			<div class="col-md-2">
+				<a href="#" class="thumbnail">
+					<img src="img/gal/04.jpg" alt="..." ></a>
+				<a href="#" class="thumbnail">
+					<img src="img/gal/11.jpg" alt="..." ></a>
+			</div>
+			<div class="col-md-2">
+				<a href="#" class="thumbnail">
+					<img src="img/gal/12.jpg" alt="..." ></a>
+				<a href="#" class="thumbnail">
+					<img src="img/gal/06.jpg" alt="..." ></a>
 			</div>
 		</div>
 	</div>
-<!-- </footer> -->
+	
+	<!-- Around 1000... -->
+	<div class="container" style="margin-top: 20px">
+		<div class="row clearfix ui-widget-content">
+			<div class="col-md-2 column"></div>
+			<div class="col-md-8 column draggable">
+				<h1 class="not-draggable content-editable">Around 1000 hours to&nbsp;design and construct</h1>
+				<p class="not-draggable content-editable">The SplinterBike forced me&nbsp;to&nbsp;employ timbers previously unused in&nbsp;my&nbsp;workshop 
+					such as&nbsp;Lignum Vitae, a&nbsp;naturally self lubricating hardwood, which is&nbsp;included for bushings 
+					to&nbsp;minimise friction where one component turns in&nbsp;an&nbsp;opposing direction to&nbsp;another.</p>
+				<p class="not-draggable content-editable">Many years of&nbsp;woodworking experience have enabled me&nbsp;to&nbsp;make a&nbsp;bet 
+					with a&nbsp;friend and end up&nbsp;developing something that will ultimately set a&nbsp;land speed record
+					for wooden bicycles. It&rsquo;s a&nbsp;testament to&nbsp;the versatility and strength of&nbsp;one of&nbsp;mankind&rsquo;s 
+					oldest available materials... and of&nbsp;course, modern glue technology.</p>
+			</div>
+		</div>
+	</div>	
+	
+	<!-- Press -->
+	<div id="press" class="container" style="margin-top: 20px;">
+		<div class="row clearfix">
+			<div class="col-md-2 column">
+			</div>
+			<div class="col-md-8 column">
+				<h1>Listen to press noise</h1>
+			</div>
+			<div class="col-md-2 column">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2">
+			</div>
+			<div class="col-md-4">
+					<div class="thumbnail">
+						<a href="http://www.treehugger.com/bikes/100-wooden-bike-primed-to-set-land-speed-record.html">
+							<img src="img/press/th123.jpg" alt="..." style="width: 100%;">
+						<div class="caption">
+							<h3>100% Wooden Bike Sets Land Speed Record</h3>
+							<p>The SplinterBike is a bit of an engineering marvel. 
+								The bike is made completely from wood; no screws, bolts, metal, plastic or rubber. 
+								Just wood, and most of it reclaimed!...</p> 
+							<footer>— Jerry James Stone, treehugger.com</footer>
+						</div>
+						</a>
+					</div>
+					<div class="thumbnail">
+						<a href="http://articles.cnn.com/2011-05-30/tech/eco.wooden.bike_1_wooden-bike-michael-thompson-gear?_s=PM:TECH">
+							<img src="img/press/cnn123.jpg" alt="..." style="width: 100%;">
+						<div class="caption">
+							<h3>Wooden &rsquo;SplinterBike&rsquo; aims to&nbsp;set world speed record</h3>
+							<p>A&nbsp;wooden bicycle sounds almost as&nbsp;useful as&nbsp;a&nbsp;square wheel, 
+								but British craftsman Michael Thompson has not only made...</p> 
+							<footer>— Dean Irvine, CNN</footer>
+						</div>
+						</a>
+					</div>
+			</div>
+			<div class="col-md-4">
+					<div class="thumbnail">
+						<a href="http://www.bbc.co.uk/news/uk-england-norfolk-16578622">
+							<img src="img/press/bbc123.jpg" alt="..." style="width: 100%;">
+						<div class="caption">
+							<h3>Wooden bike distance record attempt by Norfolk joiner</h3>
+							<p>A joiner from Norfolk who created the world's fastest bicycle made entirely 
+									of wood has revealed plans for a new record attempt...
+							</p>
+							<footer>— David Keller. BBC News, Norfolk</footer>
+						</div>
+						</a>
+					</div>
+					<div class="thumbnail">
+						<a href="http://www.theguardian.com/environment/bike-blog/2011/apr/27/splinterbike-wooden-bike-engineering-marvel">
+							<img src="img/press/theg123.jpg" alt="..." style="width: 100%;">
+						<div class="caption">
+							<h3>The wooden bike&nbsp;&mdash; an&nbsp;engineering marvel, a&nbsp;recipe for saddle sore</h3>
+							<p>The SplinterBike has no&nbsp;screws, bolts, metal, plastic or&nbsp;rubber. 
+								It&nbsp;has one gear and no&nbsp;brakes, and it&rsquo;s going for a&nbsp;speed record</p>
+							<footer>— Kirsty Ennew, The Guardian</footer>
+						</div>
+						</a>
+					</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Quantum -->
+	<div class="container" style="margin-top: 20px">
+		<div class="row clearfix">
+			<div class="col-md-2 column"></div>
+			<div class="col-md-8 column">
+				<h1>SplinterBikeQuantum reveal</h1>
+				<p>SBQ has various improvements over its predecessors, although there is&nbsp;no&nbsp;doubting that it&nbsp;comes 
+					from the same stable. Many a&nbsp;hard lesson was learnt during the 1,600 hours of&nbsp;designing, 
+					prototyping, building and testing of&nbsp;last year&rsquo;s bikes. Mostly issues concerning durability because 
+					it&nbsp;soon became apparent that the chosen materials were not the most suitable for this type of&nbsp;vehicle. 
+					However, itʼs great fun to&nbsp;see just how far they can be&nbsp;pushed, albeit in&nbsp;the wrong direction?</p>
+			</div>
+			<div class="col-md-2 column"></div>
+		</div>
+	</div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>    
-    <script src="js/bootstrap.min.js"></script>
+</div> <!-- Sortable ends -->
+
+<!-- Footer -->
+<div id="contacts" class="container" style="margin-top: 20px;">
+	<hr style="margin-top: 30px; ">
+	<div class="row ui-widget-content">
+		<div class="col-md-2 column draggable">
+			<address>
+				<strong>Michael Thompson</strong><br>
+				Thompson Joinery<br>
+				Potter Heigham<br>
+				Norfolk, England<br>
+				NR29 5JB<br>
+				<abbr title="UK phone">UK:</abbr> 07768 772366<br>
+				<abbr title="International phone">INT:</abbr> +44 7768 772366<br>
+				<a href="mailto:SplinterBike@hotmail.co.uk">SplinterBike@hotmail.co.uk</a>
+			</address>
+		</div>
+		<div class="col-md-8 column draggable" style="padding-top: 40px; padding-left: 50px;">
+			<a href="http://www.bamnuttall.co.uk/"><img src="img\logo\bam_nuttall.jpg" alt="..."></a>
+			<a href="http://www.sowandso.com/"><img src="img\logo\sow_and_so.jpg" alt="..."></a>
+			<a href="http://www.bostik.co.uk/"><img src="img\logo\bostik.jpg" alt="..."></a>
+			<a href="http://www.skjenergy.com/projects/"><img src="img\logo\energy_strat.jpg" alt="..."></a>
+			<a href="http://www.starfishlimited.co.uk/"><img src="img\logo\starfish.jpg" alt="..."></a>
+			<a href="http://cheeky-monkey.co/"><img src="img\logo\cheeky_monkey.jpg" alt="..."></a>
+		</div>
+		<div class="col-md-2 column">
+			<p class="text-right" style="padding-top: 140px;">Designed&nbsp;by&nbsp;
+			<a href="https://github.com/dibikhin">Roman&nbsp;Dibikhin</a></p></div>
+	</div>
+</div> <!-- Footer ends-->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> 
+	<script src="js/bootstrap.min.js"></script>
 
 	<!-- <script src="js/jquery.min.js"></script> -->
 	<script src="js/jquery-ui.js"></script>
 
 <script>
 	$(function() {
-		$( "#sortable" ).sortable({ placeholder: "ui-state-highlight" });
-		$( ".draggable" )
-			.draggable({ containment: "parent" });
-		$( ".editme" ).each(function () {
+		$( ".sortable" ).sortable({ placeholder: "ui-state-highlight" });
+		$( ".draggable" ).draggable({ containment: "parent"	});
+		$( ".content-editable" ).each(function () {
 			var ths = this;
 			$( ths )
 				.dblclick(function() { 
 					$( ths ).prop("contentEditable", true); 
 					$( ths ).focus(); 
-					$( ".draggable" ).draggable({ cancel: ".nodr" });
-					$( "#sortable" ).sortable({ disabled: true });
+					$( ".draggable" ).draggable({ cancel: ".not-draggable" });
+					$( ".sortable" ).sortable({ disabled: true });
 				})
 				.blur(function() { 
 					$( ths ).prop("contentEditable", false); 
 					$( ".draggable" ).draggable({ cancel: "" });
-					$( "#sortable" ).sortable({ disabled: false });
+					$( ".sortable" ).sortable({ disabled: false });
 				}); 
 		}); 
-	});  
+	}); 
 </script>
-  </body>
+
+</body>
 </html>
