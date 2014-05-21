@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Зарегистрироваться на Ибошах</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+
+<div class="container-fluid" style="margin-top: 200px;">
+  <div class="row">
+		<div class="col-md-4"></div>
+		<div class="col-md-4">
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+				<h3 class="panel-title">Еще немного и добро пожаловать</h3>
+			  </div>
+			  <div class="panel-body">
+					<form class="form-horizontal" role="form">
+				  <div class="form-group">
+					<label for="inputEmail3" class="col-sm-3 control-label">Эл. почта:</label>
+					<div class="col-sm-8">
+					  <input type="email" class="form-control" id="inputEmail3" autofocus
+						onkeypress="if($('#inputEmail3').val()!='') $('.help-block').html('<em>Осталось ввести пароль</em>');">
+					</div>
+				  </div>
+				  <div class="form-group">
+					<label for="inputPassword3" class="col-sm-3 control-label">Пароль:</label>
+					<div class="col-sm-8">
+					  <input type="password" class="form-control" id="inputPassword3" maxlength="25" 
+						onkeypress="if($('#inputPassword3').val()!='') $('.btn.btn-default').attr('disabled', false); $('.help-block').text('');">
+					</div>
+				  </div>
+				  <div class="form-group">
+					<div class="col-sm-offset-3 col-sm-9">
+					<a href="file:///C:/Users/Roman/My%20Projects/ebashy/index_inside.html">
+					  <button type="button" class="btn btn-default" disabled>Зарегистрироваться</button> <!-- submit -->
+					</a>
+					</div>
+				  </div>
+				  <div class="form-group">
+					<div class="col-sm-offset-3 col-sm-9">
+					  <span class="help-block"><em>Осталось ввести эл. почту и пароль</em></span>
+					</div>
+				  </div>					
+				</form>
+			  </div>
+			</div>
+		</div>
+		<div class="col-md-4"></div>
+  </div>
+</div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

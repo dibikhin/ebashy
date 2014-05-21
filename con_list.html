@@ -1,0 +1,40 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery UI Sortable - Connect lists</title>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> 
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<style>
+#sortable1, #sortable2 { list-style-type: none; margin: 0; padding: 0 0 2.5em; float: left; margin-right: 10px; }
+#sortable1 li, #sortable2 li { margin: 0 5px 5px 5px; padding: 5px; font-size: 1.2em; width: 120px; border: 2px dashed blue;}
+</style>
+<script>
+$(function() {
+$( "#sortable1, #sortable2" ).sortable({
+connectWith: ".connectedSortable"
+}).disableSelection();
+});
+</script>
+</head>
+<body>
+<ul id="sortable1" class="connectedSortable list-inline">
+<li class="ui-state-default">Item 1</li>
+<li class="ui-state-default">Item 2</li>
+<li class="ui-state-default">Item 3</li>
+<li class="ui-state-default">Item 4</li>
+<li class="ui-state-default">Item 5</li>
+</ul>
+<ul id="sortable2" class="connectedSortable list-inline">
+<li class="ui-state-highlight">Item 1</li>
+<li class="ui-state-highlight">Item 2</li>
+<li class="ui-state-highlight">Item 3</li>
+<li class="ui-state-highlight">Item 4</li>
+<li class="ui-state-highlight">Item 5</li>
+</ul>
+</body>
+</html>
