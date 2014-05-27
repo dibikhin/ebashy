@@ -17,6 +17,64 @@
 	</head>
 <body>
 
+<!-- Modal Register-->
+<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">     
+      <div class="modal-body">
+		<div class="container-fluid" style="margin-top: 15px;">
+		  <div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-default">
+					  <div class="panel-heading">
+						<h3 class="panel-title">Еще немного и добро пожаловать</h3>
+					  </div>
+					  <div class="panel-body">
+							<form class="form-horizontal" role="form">
+						  <div class="form-group">
+							<label for="inputEmail3" class="col-sm-3 control-label">Эл. почта:</label>
+							<div class="col-sm-8">
+							  <input type="email" class="form-control" id="inputEmail3" autofocus
+								onkeypress="if($('#inputEmail3').val()!='') $('.help-block').html('<em>Осталось ввести пароль</em>');">
+							</div>
+						  </div>
+						  <div class="form-group">
+							<label for="inputPassword3" class="col-sm-3 control-label">Пароль:</label>
+							<div class="col-sm-8">
+							  <input type="password" class="form-control" id="inputPassword3" maxlength="25" 
+								onkeypress="if($('#inputPassword3').val()!='') $('.btn.btn-default').attr('disabled', false); $('.help-block').text('');">
+							</div>
+						  </div>
+						  <div class="form-group">
+							<div class="col-sm-offset-3 col-sm-9">
+							<a href="file:///C:/Users/Roman/My%20Projects/ebashy/index_inside.html">
+							  <button type="button" class="btn btn-default" disabled>Зарегистрироваться</button> <!-- submit -->
+							</a>
+							</div>
+						  </div> 
+						  <div class="form-group">
+							<div class="col-sm-offset-3 col-sm-9">
+							  <span class="help-block"><em>Осталось ввести эл. почту и пароль</em></span>
+							</div>
+						  </div>
+						  <div class="form-group">
+							<div class="col-sm-offset-3 col-sm-9">
+							<a href="file:///C:/Users/Roman/My%20Projects/ebashy/index_inside.html">
+							 <span style="border-bottom: 1px dashed;">Напомнить пароль</span>
+							</a>
+							</div>
+						  </div>
+						</form>
+					  </div>
+					</div>
+				</div>
+		  </div>
+		</div>
+      </div>
+    </div>
+  </div>
+</div> <!-- Modal Register ends -->
+
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="mynav">
 	<div class="container-fluid">
 		<!-- Brand and toggle get grouped for better mobile display -->
@@ -32,13 +90,15 @@
 			<ul class="nav navbar-nav">
 				<li>
 					<form class="navbar-form navbar-left" role="form"> <!-- dummy -->
-						<button type="button" class="btn btn-default">Ондо</button>
-						<button type="button" class="btn btn-default">Редо</button>
+					<div class="btn-group">
+						<button type="button" class="btn btn-default" >Ондо</button>
+						<button type="button" class="btn btn-default" >Редо</button>
+					</div>
 						<a href="http://dibikhin.kd.io/sb" target="_blank">
 						<!-- <a href="file:///C:/Users/Roman/My%20Projects/splinterbike/index_inside.html" target="_blank"> -->
 							<button type="button" class="btn btn-default">Опубликовать</button></a>
 					</form>		
-				</li>	
+				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">  
 				<li>
@@ -53,7 +113,8 @@
 							<button type="button" class="btn btn-default" disabled>Войти</button> <!-- submit? --></a>						
 					</form>
 				</li>
-				<li><a href="file:///C:/Users/Roman/My%20Projects/ebashy/register.html">Зарегистироваться</a></li>
+				<!-- <li><a href="file:///C:/Users/Roman/My%20Projects/ebashy/register.html" data-toggle="modal">Зарегистироваться</a></li> -->
+				<li><a href="#" data-toggle="modal" data-target="#myModal">Зарегистироваться</a></li>
 			</ul>
 		</div><!-- /.navbar-collapse -->
 	</div><!-- /.container-fluid -->
