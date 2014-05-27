@@ -17,6 +17,70 @@
 	</head>
 <body>
 
+<!-- Modal Register-->
+<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">     
+      <div class="modal-body">
+		<div class="container-fluid" style="margin-top: 15px;">
+		  <div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-default">
+					   <div class="panel-heading">
+							<h3 class="panel-title">Панель управления сайтом &nbsp;
+								<span contenteditable style="border-bottom: 1px dashed;">Сплинтербайка</span></h3>
+					   </div>
+					  <div class="panel-body">			
+						<form class="form-horizontal" role="form">
+						  <div class="form-group">
+							<label for="ourDomainName" class="col-sm-4 control-label">
+								Найтите свободный домен у нас</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="ourDomainName" style="display: inline; width: 190px;" autofocus
+								onkeyup="if($('#ourDomainName').val()=='asdf') { $('.help-block').html('свободен'); $('#connectDomain').removeAttr('disabled'); }
+										else if($('#ourDomainName').val()=='qwer') { $('.help-block').html('занят'); $('#connectDomain').attr('disabled','disabled'); }
+										else if($('#ourDomainName').val()=='') { $('.help-block').html(''); } ">
+								<select class="form-control" style="display: inline; width: 90px;">
+									<option value="">.ru</option>
+									<option value="">.com</option>
+									<option value="">.рф</option>
+								</select>
+								<span class="help-block"></span>
+							</div>					
+						  </div>
+						  <div class="form-group">
+							<label for="userDomainName" class="col-sm-4 control-label">
+								или введите свой</label>
+							<div class="col-sm-8">
+							  <input type="text" class="form-control" id="userDomainName" style="display: inline; width: 190px;" disabled>
+							</div>
+						  </div>				 
+						  <div class="form-group">
+							<div class="col-sm-offset-4 col-sm-8">
+							<a href="#">
+							  <button id="connectDomain" type="button" class="btn btn-default" disabled 
+								onclick="$('form').hide(); $('#infourl').show(); ">
+								Подключить</button> <!-- submit -->
+							</a>
+							</div>
+						  </div>	
+						</form>
+						<div id="infourl" style="display: none;" class="container-fluid">
+							<p class="lead">
+								Сайт доступен по адресу <strong>http://asdf.ru</strong> до&nbsp;14&nbsp;октября&nbsp;2016&nbsp;года.</p>
+							<p>
+								С 15 октября 2016 года сайт будет доступен только по&nbsp;адресу http://paforodi.com/petrov/splinterbyke</p>
+						</div>
+					  </div>
+					</div>
+				</div>
+		  </div>
+		</div>
+      </div>
+    </div>
+  </div>
+</div> <!-- Modal Register ends -->
+
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="mynav">
 	<div class="container-fluid">
 		<!-- Brand and toggle get grouped for better mobile display -->
@@ -46,13 +110,13 @@
 				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li>
-					<span class="glyphicon glyphicon-user" style="font-size: 40px; margin-top: 5px; color: grey;"></span></li>
+				<li><span class="glyphicon glyphicon-cog" data-toggle="modal" data-target="#myModal" 
+					style="font-size: 40px; margin-top: 5px; color: grey; cursor:pointer"></span></li>
+				<li style="padding-left: 10px; "><span class="glyphicon glyphicon-user" style="font-size: 40px; margin-top: 5px; color: grey;"></span></li>
 				<li class="dropdown">
 				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 					<b class="caret"></b> </a>
-				  <ul class="dropdown-menu">
-					<li><a href="#">Панель управления</a></li>
+				  <ul class="dropdown-menu">					
 					<li><a href="#">Мои сайты</a></li>
 					<li><a href="#">Шаблоны</a></li>
 					<li><a href="#">Настройки</a></li>

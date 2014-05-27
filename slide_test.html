@@ -1,0 +1,31 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>slide demo</title>
+  <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"> -->
+  <style>
+  #toggle {
+    width: 100px;
+    height: 100px;
+    background: #ccc;
+  }
+  </style>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> 
+	<script src="js/jquery-ui.js"></script>
+</head>
+<body>
+ 
+<p>Click anywhere to toggle the box.</p>
+<span id="toggle1">фывафывафыва</span>
+<span id="toggle2">ячсмячсмячсм</span>
+<div id="toggle"></div>
+ 
+<script>
+$( "p" ).click(function() {
+  $( "#toggle" ).toggle( "slide", { direction: "right" }, 50);
+});
+</script>
+ 
+</body>
+</html>
