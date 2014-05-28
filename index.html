@@ -11,8 +11,8 @@
 		<style>
 			.sortable { list-style-type: none; margin: 0; padding: 0; width: 100%; }
 			.ui-state-highlight { height: 100px; background-color: white; border: 2px dashed blue; width: 100%; }
-			.ui-draggable-dragging { border: 2px dashed orange; }
-			.hovered-highlight { border: 2px dashed green; cursor: move; } 
+			.ui-draggable-dragging { border: 2px dotted green; }
+			.hovered-highlight { border: 3px dashed orange; cursor: move; } 
 		</style>
 	</head>
 <body>
@@ -47,9 +47,9 @@
 						  </div>
 						  <div class="form-group">
 							<div class="col-sm-offset-3 col-sm-9">
-							<a href="file:///C:/Users/Roman/My%20Projects/ebashy/index_inside.html">
-							  <button type="button" class="btn btn-default" disabled>Зарегистрироваться</button> <!-- submit -->
-							</a>
+							<!-- <a href="file:///C:/Users/Roman/My%20Projects/ebashy/index_inside.html"> -->
+							<a href="http://dibikhin.kd.io/ebashy/index_inside.html">
+							  <button type="button" class="btn btn-default" disabled>Зарегистрироваться</button></a> <!-- submit -->
 							</div>
 						  </div> 
 						  <div class="form-group">
@@ -94,8 +94,7 @@
 						<button type="button" class="btn btn-default" >Ондо</button>
 						<button type="button" class="btn btn-default" >Редо</button>
 					</div>
-						<a href="http://dibikhin.kd.io/sb" target="_blank">
-						<!-- <a href="file:///C:/Users/Roman/My%20Projects/splinterbike/index_inside.html" target="_blank"> -->
+						<a href="http://dibikhin.kd.io/sb" target="_blank">						
 							<button type="button" class="btn btn-default">Опубликовать</button></a>
 					</form>		
 				</li>
@@ -107,10 +106,10 @@
 						<input type="text" class="form-control" placeholder="Логин">
 						<input type="password" class="form-control" placeholder="Пароль" id="mypass"
 							onkeypress=" if($('#mypass').val()!='') $('.btn.btn-default').attr('disabled', false); ">
-						</div>
-						<!-- <a href="http://dibikhin.kd.io" target="_blank"> -->
-						<a href="file:///C:/Users/Roman/My%20Projects/ebashy/index_inside.html">
-							<button type="button" class="btn btn-default" disabled>Войти</button> <!-- submit? --></a>						
+						</div>						
+						<!-- <a href="file:///C:/Users/Roman/My%20Projects/ebashy/index_inside.html"> -->
+						<a href="http://dibikhin.kd.io/ebashy/index_inside.html">
+							<button type="button" class="btn btn-default" disabled>Войти</button></a> <!-- submit? -->
 					</form>
 				</li>
 				<!-- <li><a href="file:///C:/Users/Roman/My%20Projects/ebashy/register.html" data-toggle="modal">Зарегистироваться</a></li> -->
@@ -123,10 +122,10 @@
 
 <!-- Splinterbyke site-->
 
-<div class="sortable" style="margin-top: 50px;">
+<div class="sortable" style="margin-top: 51px;">
 
 	<!-- Navigation -->
-	<div class="navbar navbar-default navbar-static-top hovered" role="navigation" style="margin-bottom: 0px;">
+	<div class="navbar navbar-default navbar-static-top hover-mark" role="navigation" style="margin-bottom: 0px;">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -153,7 +152,7 @@
 	</div> <!-- Navigation ends -->
 
 	<!-- Carousel -->
-	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="margin-bottom: 0px;">
+	<div id="carousel-example-generic" class="carousel slide hover-mark" data-ride="carousel" style="margin-bottom: 0px;">
 		<ol class="carousel-indicators">
 			<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
 			<li data-target="#carousel-example-generic" data-slide-to="1"></li>
@@ -170,7 +169,7 @@
 	</div> <!-- Carousel ends-->
 
 	<!-- No bolts -->
-	<div class="container" style="margin-top: 40px">
+	<div class="container hover-mark" style="margin-top: 40px">
 		<div class="row clearfix">
 			<div class="col-md-2 column"></div>
 			<div class="col-md-4 column draggable">
@@ -190,7 +189,7 @@
 	</div>
 
 	<!-- Gallery -->
-	<div class="container" id="gallery" style="margin-top: 10px;"> 
+	<div class="container hover-mark" id="gallery" style="margin-top: 10px;"> 
 		<div class="row clearfix">
 			<div class="col-md-2 column">
 			</div>
@@ -233,7 +232,7 @@
 	</div>
 	
 	<!-- Around 1000... -->
-	<div class="container" style="margin-top: 20px">
+	<div class="container hover-mark" style="margin-top: 20px">
 		<div class="row clearfix ui-widget-content">
 			<div class="col-md-2 column"></div>
 			<div class="col-md-8 column draggable">
@@ -250,7 +249,7 @@
 	</div>	
 	
 	<!-- Press -->
-	<div id="press" class="container" style="margin-top: 20px;">
+	<div id="press" class="container hover-mark" style="margin-top: 20px;">
 		<div class="row clearfix">
 			<div class="col-md-2 column">
 			</div>
@@ -317,7 +316,7 @@
 	</div>
 	
 	<!-- Quantum -->
-	<div class="container" style="margin-top: 20px">
+	<div class="container hover-mark" style="margin-top: 20px">
 		<div class="row clearfix">
 			<div class="col-md-2 column"></div>
 			<div class="col-md-8 column">
@@ -338,7 +337,7 @@
 <div id="contacts" class="container" style="margin-top: 20px;">
 	<hr style="margin-top: 30px; ">
 	<div class="row ui-widget-content">
-		<div class="col-md-2 column draggable">
+		<div class="col-md-2 column draggable hover-mark">
 			<address>
 				<strong>Michael Thompson</strong><br>
 				Thompson Joinery<br>
@@ -372,7 +371,7 @@
 
 <script>
 	$(function() {
-		$( ".hovered" ).hover(
+		$( ".hover-mark" ).hover(
 		  function() {
 			$( this ).addClass( "hovered-highlight" );
 		  }, function() {
