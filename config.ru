@@ -3,7 +3,7 @@ require 'pp'
 $stdout.sync = true
 
 use Rack::Static,
-  :urls => ["/css", "/js", "/img"],
+  :urls => ["/css", "/js", "/img", "/fonts"],
   :root => "."
 
 run lambda { |env|
