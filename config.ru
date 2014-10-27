@@ -7,7 +7,8 @@ use Rack::Static,
   :root => "."
 
 run lambda { |env|
-  filename = env["REQUEST_PATH"] == '/' ? 'index.html' : env["REQUEST_PATH"]
+  req_path = env["REQUEST_PATH"]
+  filename = req_path == '/' ? 'index.html' : req_path[1..req_path.size]
   [
     200,
     {
