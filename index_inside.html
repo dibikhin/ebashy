@@ -8,29 +8,25 @@
 
 		<!-- Bootstrap -->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<style>	
-		
-			.ui-state-highlight::before { 
-				background-color: white; 
-				border: 3px dashed lightseagreen; 
-				position: relative; 
-				float: left; 
-				height: 150px;
-				width: 16.7%;
-			    content: 'бросить сюда'; 
-				font-size: 20px; 
-				color: lightseagreen; 
-				text-align: center; 
-				padding-top: 60px; 
+		<style>
+
+			.ui-state-highlight {
+				background-color: white;
+				border: 3px dashed lightseagreen;
+				position: relative;
+				float: left;
+				font-size: 20px;
+				color: lightseagreen;
+				text-align: center;
 			}
 
 			.ui-draggable-dragging { border: 2px dotted green; }
-			
-			.hovered-highlight { 
-				border: 3px dotted orange; 
-				cursor: move; 				
+
+			.hovered-highlight {
+				border: 3px dotted orange;
+				cursor: move;
 			}
-			 
+
 			/* [class*="col-"] { border: 1px dotted red; } */
 
 		</style>
@@ -40,7 +36,7 @@
 <!-- Modal Control Panel-->
 <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
  <div class="modal-dialog">
- <div class="modal-content"> 
+ <div class="modal-content">
  <div class="modal-body">
 		<div class="container-fluid" style="margin-top: 15px;">
 		 <div class="row">
@@ -50,7 +46,7 @@
 							<h3 class="panel-title">Панель управления сайтом &nbsp;
 								<span contenteditable style="border-bottom: 1px dashed;">Сплинтербайка</span></h3>
 					 </div>
-					 <div class="panel-body">			
+					 <div class="panel-body">
 						<form class="form-horizontal" role="form">
 						 <div class="form-group">
 							<label for="ourDomainName" class="col-sm-4 control-label">
@@ -66,7 +62,7 @@
 									<option value="">.рф</option>
 								</select>
 								<span class="help-block"></span>
-							</div>					
+							</div>
 						 </div>
 						 <div class="form-group">
 							<label for="userDomainName" class="col-sm-4 control-label">
@@ -74,25 +70,25 @@
 							<div class="col-sm-8">
 							 <input type="text" class="form-control" id="userDomainName" style="display: inline; width: 190px;" disabled>
 							</div>
-						 </div>				 
+						 </div>
 						 <div class="form-group">
 							<div class="col-sm-offset-4 col-sm-8">
 							<a href="#">
-							 <button id="connectDomain" type="button" class="btn btn-default" disabled 
+							 <button id="connectDomain" type="button" class="btn btn-default" disabled
 								onclick="$('form').hide(); $('#infourl').show();">
 								Подключить</button> <!-- submit -->
 							</a>
 							</div>
-						 </div>	
+						 </div>
 						</form>
 						<div id="infourl" style="display: none;" class="container-fluid">
 							<p class="lead">
 								Домен <strong>asdf.ru</strong> оплачен до&nbsp;14&nbsp;октября&nbsp;2016&nbsp;года.</p>
 							<p class="lead">
-								Сайт <em>"Сплинтербайка"</em> будет доступен все это время по адресу 
+								Сайт <em>"Сплинтербайка"</em> будет доступен все это время по адресу
 								<strong>http://asdf.ru</strong></p>
 							<p>
-								С 15 октября 2016 года регистрация домена закончится и сайт будет доступен только 
+								С 15 октября 2016 года регистрация домена закончится и сайт будет доступен только
 								по&nbsp;адресу http://splinterbike.ibochy.tk</p>
 							<a href="#">
 								<span style="border-bottom: 1px dashed;">Продлить регистрацию домена</span></a>
@@ -125,11 +121,11 @@
 						<div class="btn-group">
 							<button type="button" class="btn btn-default navbar-btn">Ондо</button>
 							<button type="button" class="btn btn-default navbar-btn">Редо</button>
-						</div>						
-						<a href="http://splinterbike.ibochy.tk" target="_blank">						
+						</div>
+						<a href="http://splinterbike.ibochy.tk" target="_blank">
 							<button type="button" class="btn btn-default navbar-btn">Опубликовать</button></a>
 					</div>
-				</li>	
+				</li>
 				<li>
 					<h3 style="color: grey; margin-top: 13px; margin-left: 20px;">Сплинтербайк &mdash;
 						<a href="http://splinterbike.ibochy.tk" target="_blank">
@@ -137,13 +133,13 @@
 				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><span class="glyphicon glyphicon-cog" data-toggle="modal" data-target="#myModal" 
+				<li><span class="glyphicon glyphicon-cog" data-toggle="modal" data-target="#myModal"
 					style="font-size: 40px; margin-top: 5px; color: grey; cursor:pointer"></span></li>
 				<li style="padding-left: 10px;"><span class="glyphicon glyphicon-user" style="font-size: 40px; margin-top: 5px; color: grey;"></span></li>
 				<li class="dropdown">
 				 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 					<b class="caret"></b> </a>
-				 <ul class="dropdown-menu">					
+				 <ul class="dropdown-menu">
 					<li><a href="#">Мои сайты</a></li>
 					<li><a href="#">Шаблоны</a></li>
 					<li><a href="#">Настройки</a></li>
@@ -154,13 +150,13 @@
 			</ul>
 		</div><!-- /.navbar-collapse -->
 	</div><!-- /.container-fluid -->
-</nav> 
+</nav>
 
 
 <!-- Splinterbyke site-->
 
 <div class="sortable connectedSortable" style="margin-top: 51px;">
-	<!-- Navigation -->	
+	<!-- Navigation -->
 	<div class="navbar navbar-default navbar-static-top hover-mark" role="navigation" style="margin-bottom: 0px;">
 		<div class="container">
 			<div class="navbar-header">
@@ -187,7 +183,7 @@
 		</div>
 	</div> <!-- Navigation ends -->
 
-	<!-- Carousel -->	
+	<!-- Carousel -->
 	<div id="carousel-example-generic" class="carousel slide hover-mark" data-ride="carousel">
 		<ol class="carousel-indicators">
 			<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -208,23 +204,26 @@
 <div class="container sortable connectedSortable">
 
 	<!-- No bolts -->
-	<div class="row sortable connectedSortable" style="min-height: 100px;">
+	<div id="it1234" class="row sortable connectedSortable" style="min-height: 100px;">
 		<div class="col-md-2 hover-mark" style="min-height: 100px;"></div>
-		<div class="col-md-4 hover-mark" style="min-height: 100px;">
+		<div class="col-md-4 hover-mark" style="min-height: 100px; ">
+			<span id="but1234" class="label label-danger"
+			style="cursor: pointer; display: none; float: right; padding: 10px; margin: 10px; font-size: 20px; ">
+					<span class="glyphicon glyphicon-remove"></span></span>
 			<h1 class="content-editable">No bolts or screws, just wood and glues!</h1>
 			<p class="content-editable" id="wsx" >
-				The SplinterBike project came about after a&nbsp;casual &pound;1&nbsp;bet turned serious. 
-				Inspiration came from many areas but the most significant was the influence of&nbsp;the carbon-fibre 
-				Lotus 108 time trial bicycle designed by&nbsp;fellow Norfolk designer Mike Burrows and made by&nbsp;the Norfolk based 
+				The SplinterBike project came about after a&nbsp;casual &pound;1&nbsp;bet turned serious.
+				Inspiration came from many areas but the most significant was the influence of&nbsp;the carbon-fibre
+				Lotus 108 time trial bicycle designed by&nbsp;fellow Norfolk designer Mike Burrows and made by&nbsp;the Norfolk based
 				Lotus car manufacturer.</p>
 			<p class="content-editable">
-				The challenge was to&nbsp;design and build a&nbsp;100% wooden bicycle. 
-				<em>&laquo;No&nbsp;bolts or&nbsp;screws, just wood and glues&raquo;</em> were the rules of&nbsp;engagement. 
+				The challenge was to&nbsp;design and build a&nbsp;100% wooden bicycle.
+				<em>&laquo;No&nbsp;bolts or&nbsp;screws, just wood and glues&raquo;</em> were the rules of&nbsp;engagement.
 				What developed was the SplinterBike, creating a&nbsp;new type of&nbsp;human powered vehicle... <em>the Plicycle</em>.</p>
 		</div>
+		<div class="col-md-2 hover-mark" style="min-height: 100px; " ></div>
 		<div class="col-md-2 hover-mark" style="min-height: 100px;"></div>
 		<div class="col-md-2 hover-mark" style="min-height: 100px;"></div>
-		<div class="col-md-2 hover-mark" style="min-height: 100px;"></div>						
 	</div>
 
 	<!-- Gallery -->
@@ -267,38 +266,38 @@
 		</div>
 		<div class="col-md-2 hover-mark" style="min-height: 100px;"></div>
 	</div> 	<!-- Gallery ends-->
-	
-	<!-- Around 1000... -->	
+
+	<!-- Around 1000... -->
 	<div class="row sortable connectedSortable" style=" min-height: 100px;">
 		<div class="col-md-2 hover-mark" style="min-height: 100px;"> </div>
 		<div class="col-md-8 hover-mark">
 			<h1 class="content-editable">Around 1000 hours to&nbsp;design and construct</h1>
-			<p class="content-editable">The SplinterBike forced me&nbsp;to&nbsp;employ timbers previously unused in&nbsp;my&nbsp;workshop 
-				such as&nbsp;Lignum Vitae, a&nbsp;naturally self lubricating hardwood, which is&nbsp;included for bushings 
+			<p class="content-editable">The SplinterBike forced me&nbsp;to&nbsp;employ timbers previously unused in&nbsp;my&nbsp;workshop
+				such as&nbsp;Lignum Vitae, a&nbsp;naturally self lubricating hardwood, which is&nbsp;included for bushings
 				to&nbsp;minimise friction where one component turns in&nbsp;an&nbsp;opposing direction to&nbsp;another.</p>
-			<p class="content-editable">Many years of&nbsp;woodworking experience have enabled me&nbsp;to&nbsp;make a&nbsp;bet 
+			<p class="content-editable">Many years of&nbsp;woodworking experience have enabled me&nbsp;to&nbsp;make a&nbsp;bet
 				with a&nbsp;friend and end up&nbsp;developing something that will ultimately set a&nbsp;land speed record
-				for wooden bicycles. It&rsquo;s a&nbsp;testament to&nbsp;the versatility and strength of&nbsp;one of&nbsp;mankind&rsquo;s 
+				for wooden bicycles. It&rsquo;s a&nbsp;testament to&nbsp;the versatility and strength of&nbsp;one of&nbsp;mankind&rsquo;s
 				oldest available materials... and of&nbsp;course, modern glue technology.</p>
 		</div>
 		<div class="col-md-2 hover-mark" style="min-height: 100px;"> </div>
-	</div>	
+	</div>
 
 	<!-- Press -->
 	<div id="press" class="row sortable connectedSortable" style="min-height: 100px;">
 		<div class="col-md-2 hover-mark" style="min-height: 100px;"></div>
 		<div class="col-md-8 hover-mark">
 			<h1 class="content-editable">Listen to press noise</h1>
-			<div class="row sortable connectedSortable">				
-					<div class="col-md-6 hover-mark" style="min-height: 100px;">					
+			<div class="row sortable connectedSortable">
+					<div class="col-md-6 hover-mark" style="min-height: 100px;">
 							<div class="thumbnail">
 								<a href="http://www.treehugger.com/bikes/100-wooden-bike-primed-to-set-land-speed-record.html">
 									<img src="img/press/th123.jpg" alt="..." style="width: 100%;">
 								<div class="caption">
 									<h3>100% Wooden Bike Sets Land Speed Record</h3>
-									<p>The SplinterBike is a bit of an engineering marvel. 
-										The bike is made completely from wood; no screws, bolts, metal, plastic or rubber. 
-										Just wood, and most of it reclaimed!...</p> 
+									<p>The SplinterBike is a bit of an engineering marvel.
+										The bike is made completely from wood; no screws, bolts, metal, plastic or rubber.
+										Just wood, and most of it reclaimed!...</p>
 									<footer>— Jerry James Stone, treehugger.com</footer>
 								</div>
 								</a>
@@ -308,8 +307,8 @@
 									<img src="img/press/cnn123.jpg" alt="..." style="width: 100%;">
 								<div class="caption">
 									<h3>Wooden &rsquo;SplinterBike&rsquo; aims to&nbsp;set world speed record</h3>
-									<p>A&nbsp;wooden bicycle sounds almost as&nbsp;useful as&nbsp;a&nbsp;square wheel, 
-										but British craftsman Michael Thompson has not only made...</p> 
+									<p>A&nbsp;wooden bicycle sounds almost as&nbsp;useful as&nbsp;a&nbsp;square wheel,
+										but British craftsman Michael Thompson has not only made...</p>
 									<footer>— Dean Irvine, CNN</footer>
 								</div>
 								</a>
@@ -321,7 +320,7 @@
 									<img src="img/press/bbc123.jpg" alt="..." style="width: 100%;">
 								<div class="caption">
 									<h3>Wooden bike distance record attempt by Norfolk joiner</h3>
-									<p>A joiner from Norfolk who created the world's fastest bicycle made entirely 
+									<p>A joiner from Norfolk who created the world's fastest bicycle made entirely
 											of wood has revealed plans for a new record attempt...</p>
 									<footer>— David Keller. BBC News, Norfolk</footer>
 								</div>
@@ -332,7 +331,7 @@
 									<img src="img/press/theg123.jpg" alt="..." style="width: 100%;">
 								<div class="caption">
 									<h3>The wooden bike&nbsp;&mdash; an&nbsp;engineering marvel, a&nbsp;recipe for saddle sore</h3>
-									<p>The SplinterBike has no&nbsp;screws, bolts, metal, plastic or&nbsp;rubber. 
+									<p>The SplinterBike has no&nbsp;screws, bolts, metal, plastic or&nbsp;rubber.
 										It&nbsp;has one gear and no&nbsp;brakes, and it&rsquo;s going for a&nbsp;speed record</p>
 									<footer>— Kirsty Ennew, The Guardian</footer>
 								</div>
@@ -343,17 +342,17 @@
 		</div>
 		<div class="col-md-2 hover-mark" style="min-height: 100px;"></div>
 	</div>
-	
+
 	<!-- Quantum -->
 	<div class="row sortable connectedSortable" style="min-height: 100px;">
 		<div class="col-md-2 hover-mark" style="min-height: 100px;"></div>
 		<div class="col-md-8 hover-mark">
 			<h1 class="content-editable">SplinterBikeQuantum reveal</h1>
 			<p class="content-editable">
-				SBQ has various improvements over its predecessors, although there is&nbsp;no&nbsp;doubting that it&nbsp;comes 
-				from the same stable. Many a&nbsp;hard lesson was learnt during the 1,600 hours of&nbsp;designing, 
-				prototyping, building and testing of&nbsp;last year&rsquo;s bikes. Mostly issues concerning durability because 
-				it&nbsp;soon became apparent that the chosen materials were not the most suitable for this type of&nbsp;vehicle. 
+				SBQ has various improvements over its predecessors, although there is&nbsp;no&nbsp;doubting that it&nbsp;comes
+				from the same stable. Many a&nbsp;hard lesson was learnt during the 1,600 hours of&nbsp;designing,
+				prototyping, building and testing of&nbsp;last year&rsquo;s bikes. Mostly issues concerning durability because
+				it&nbsp;soon became apparent that the chosen materials were not the most suitable for this type of&nbsp;vehicle.
 				However, itʼs great fun to&nbsp;see just how far they can be&nbsp;pushed, albeit in&nbsp;the wrong direction?</p>
 		</div>
 		<div class="col-md-2 hover-mark" style="min-height: 100px;"></div>
@@ -363,7 +362,7 @@
 
 	<!-- Footer -->
 	<div id="contacts" class="row sortable connectedSortable" style="min-height: 100px;">
-		<div class="col-md-2 hover-mark">			
+		<div class="col-md-2 hover-mark">
 			<address>
 				<strong>Michael Thompson</strong><br>
 				Thompson Joinery<br>
@@ -373,9 +372,9 @@
 				<abbr title="UK phone">UK:</abbr> 07768 772366<br>
 				<abbr title="International phone">INT:</abbr> +44 7768 772366<br>
 				<a href="mailto:SplinterBike@hotmail.co.uk">SplinterBike@hotmail.co.uk</a>
-			</address>			
+			</address>
 		</div>
-		<div class="col-md-8 hover-mark" style=" padding-top: 40px; padding-left: 50px;"> 
+		<div class="col-md-8 hover-mark" style=" padding-top: 40px; padding-left: 50px;">
 			<a href="http://www.bamnuttall.co.uk/"><img src="img/logo/bam_nuttall.jpg" alt="..."></a>
 			<a href="http://www.sowandso.com/"><img src="img/logo/sow_and_so.jpg" alt="..."></a>
 			<a href="http://www.bostik.co.uk/"><img src="img/logo/bostik.jpg" alt="..."></a>
@@ -387,7 +386,7 @@
 			<p class="text-right" style="padding-top: 140px;">
 				<a href="https://github.com/dibikhin">Designed&nbsp;by&nbsp;Roman&nbsp;Dibikhin</a></p>
 		</div>
-	</div><!-- Footer ends--> 
+	</div><!-- Footer ends-->
 
 </div> <!-- Sortable ends -->
 
@@ -405,34 +404,46 @@
 		$( ".hover-mark" ).hover(
 			function() {
 				$( this ).addClass( "hovered-highlight" );
+				$('#but1234').show();
 			}, function() {
 				$( this ).removeClass( "hovered-highlight" );
+				$('#but1234').hide();
 			}
 		);
-		
+
 		$( ".sortable" )
-			.sortable({ 
-				placeholder:	 "ui-state-highlight", 
-				connectWith:	 ".connectedSortable", 
-				tolerance:		 "pointer", // хз
-				forceHelperSize: true, // хз				
+			.sortable({
+				placeholder:	 "ui-state-highlight",
+				connectWith:	 ".connectedSortable",
+				tolerance:		 "pointer",
+				start: function( event, ui ) {
+				$( ".ui-state-highlight" )
+					.width( ui.item.width() )
+					.height( ui.item.height() )
+					.css( 'line-height', ui.item.height() + "px" ) // kill me ;)
+					.html('Бросить сюда');
+				}
 			});
 
 		$( ".content-editable" ).each( function () {
 			var ths = this;
 			$( ths )
-				.click( function() { 
-					$( ths ).prop( "contentEditable", true ); 
-					$( ths ).focus(); 
+				.click( function() {
+					$( ths ).prop( "contentEditable", true );
+					$( ths ).focus();
 					$( ".hover-mark" ).removeClass( "hovered-highlight" );
 					$( ".sortable" ).sortable({ disabled: true });
 				})
-				.blur( function() { 
-					$( ths ).prop( "contentEditable", false );					
+				.blur( function() {
+					$( ths ).prop( "contentEditable", false );
 					$( ".sortable" ).sortable({ disabled: false });
-				}); 
-		}); 
-	}); 
+				});
+		});
+
+		$('#but1234').click( function() {
+			$('#it1234').remove();
+		});
+	});
 </script>
 
 </body>
