@@ -119,8 +119,8 @@
 				<li>
 					<div>
 						<div class="btn-group">
-							<button type="button" class="btn btn-default navbar-btn">Ондо</button>
-							<button type="button" class="btn btn-default navbar-btn">Редо</button>
+							<button type="button" class="btn btn-default navbar-btn undo-button">Ондо</button>
+							<button type="button" class="btn btn-default navbar-btn redo-button">Редо</button>
 						</div>
 						<a href="http://splinterbike.ibochy.tk" target="_blank">
 							<button type="button" class="btn btn-default navbar-btn">Опубликовать</button></a>
@@ -208,8 +208,8 @@
 		<div class="col-md-2 hover-mark" style="min-height: 100px;"></div>
 		<div class="col-md-4 hover-mark" style="min-height: 100px; ">
 			<span id="but1234" class="label label-danger"
-			style="cursor: pointer; display: none; float: right; padding: 10px; margin: 10px; font-size: 20px; ">
-					<span class="glyphicon glyphicon-remove"></span></span>
+			style="cursor: pointer; display: none; float: right; padding: 10px; margin: 10px; font-size: 12px; ">
+					Удалить</span>
 			<h1 class="content-editable">No bolts or screws, just wood and glues!</h1>
 			<p class="content-editable" id="wsx" >
 				The SplinterBike project came about after a&nbsp;casual &pound;1&nbsp;bet turned serious.
@@ -398,6 +398,7 @@
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery-ui.js"></script>
+<script src="js/undomanager.js"></script>
 
 <script>
 	$(function() {
@@ -440,8 +441,36 @@
 				});
 		});
 
+		var undoManager = new UndoManager(),
+			elements = {};
+
+		addElement = function(id, el) {
+			elements[id] = el;
+		};
+
+		removeElement = function(id) {
+			delete elements[id];
+		};
+
+		$(".undo-button").click(function () {
+			undoManager.undo();
+		});
+
+		$(".redo-button").click(function () {
+			undoManager.redo();
+		});
+
 		$('#but1234').click( function() {
-			$('#it1234').remove();
+			var detachedElement = $('#it1234').detach();
+			console.log(detachedElement);
+			undoManager.add({
+				undo: function() {
+					addElement('#it1234', detachedElement);
+				},
+				redo: function() {
+					removeElement('#it1234');
+				}
+			});
 		});
 	});
 </script>
