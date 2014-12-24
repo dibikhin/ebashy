@@ -204,9 +204,9 @@
 <div class="container sortable connectedSortable">
 
 	<!-- No bolts -->
-	<div id="it1234" class="row sortable connectedSortable" style="min-height: 100px;">
-		<div class="col-md-2 hover-mark" style="min-height: 100px;"></div>
-		<div class="col-md-4 hover-mark" style="min-height: 100px; ">
+	<div class="row sortable connectedSortable" style="min-height: 100px;">
+		<div id="prev1234" class="col-md-2 hover-mark" style="min-height: 100px;"></div>
+		<div id="it1234" class="col-md-4 hover-mark" style="min-height: 100px; ">
 			<span id="but1234" class="label label-danger"
 			style="cursor: pointer; display: none; float: right; padding: 10px; margin: 10px; font-size: 12px; ">
 					Удалить</span>
@@ -449,7 +449,8 @@
 		};
 
 		removeElement = function(id) {
-			delete elements[id];
+			return elements[id];
+			//delete elements[id];
 		};
 
 		$(".undo-button").click(function () {
@@ -462,13 +463,16 @@
 
 		$('#but1234').click( function() {
 			var detachedElement = $('#it1234').detach();
-			console.log(detachedElement);
+			addElement('#it1234', { prev: 'prev1234', el: detachedElement });
+
 			undoManager.add({
 				undo: function() {
-					addElement('#it1234', detachedElement);
+					var cont = removeElement('#it1234');
+					cont.el.insertAfter($('#prev1234'));
 				},
 				redo: function() {
-					removeElement('#it1234');
+					var detachedElement1 = $('#it1234').detach();
+					addElement('#it1234', { prev: 'prev1234', el: detachedElement1 });
 				}
 			});
 		});
