@@ -205,13 +205,13 @@
 
 	<!-- No bolts -->
 	<div class="row sortable connectedSortable" style="min-height: 100px;">
-		<div id="prev1234" class="col-md-2 hover-mark" style="min-height: 100px;"></div>
-		<div id="it1234" class="col-md-4 hover-mark" style="min-height: 100px; ">
-			<span id="but1234" class="label label-danger"
-			style="cursor: pointer; display: none; float: right; padding: 10px; margin: 10px; font-size: 12px; ">
+		<div id="bgtrfv4321" class="col-md-2 hover-mark" style="min-height: 100px;"></div>
+		<div id="okmnji1234" class="col-md-4 hover-mark" style="min-height: 100px; ">
+			<span class="label label-danger button-remove"
+				style="cursor: pointer; display: none; float: right; padding: 10px; margin: 10px; font-size: 12px; ">
 					Удалить</span>
 			<h1 class="content-editable">No bolts or screws, just wood and glues!</h1>
-			<p class="content-editable" id="wsx" >
+			<p class="content-editable">
 				The SplinterBike project came about after a&nbsp;casual &pound;1&nbsp;bet turned serious.
 				Inspiration came from many areas but the most significant was the influence of&nbsp;the carbon-fibre
 				Lotus 108 time trial bicycle designed by&nbsp;fellow Norfolk designer Mike Burrows and made by&nbsp;the Norfolk based
@@ -221,7 +221,14 @@
 				<em>&laquo;No&nbsp;bolts or&nbsp;screws, just wood and glues&raquo;</em> were the rules of&nbsp;engagement.
 				What developed was the SplinterBike, creating a&nbsp;new type of&nbsp;human powered vehicle... <em>the Plicycle</em>.</p>
 		</div>
-		<div class="col-md-2 hover-mark" style="min-height: 100px; " ></div>
+		<div id="cdewsx2345" class="col-md-2 hover-mark" style="min-height: 100px; " >
+			<span class="label label-danger button-remove"
+				style="cursor: pointer; display: none; float: right; padding: 10px; margin: 10px; font-size: 12px; ">
+					Удалить</span>
+			<h1 class="content-editable">Let's get it started</h1>
+			<p class="content-editable">
+				Another casual bla-bla-bla</p>
+		</div>
 		<div class="col-md-2 hover-mark" style="min-height: 100px;"></div>
 		<div class="col-md-2 hover-mark" style="min-height: 100px;"></div>
 	</div>
@@ -405,10 +412,10 @@
 		$( ".hover-mark" ).hover(
 			function() {
 				$( this ).addClass( "hovered-highlight" );
-				$('#but1234').show();
+				$(this).children('.button-remove').first().show();
 			}, function() {
 				$( this ).removeClass( "hovered-highlight" );
-				$('#but1234').hide();
+				$(this).children('.button-remove').first().hide();
 			}
 		);
 
@@ -442,15 +449,14 @@
 		});
 
 		var undoManager = new UndoManager(),
-			elements = {};
+			elements = [];
 
-		addElement = function(id, el) {
-			elements[id] = el;
+		addElement = function(el) {
+			elements.push(el);
 		};
 
-		removeElement = function(id) {
-			return elements[id];
-			//delete elements[id];
+		getElement = function() {
+			return elements.pop();
 		};
 
 		$(".undo-button").click(function () {
@@ -461,20 +467,26 @@
 			undoManager.redo();
 		});
 
-		$('#but1234').click( function() {
-			var detachedElement = $('#it1234').detach();
-			addElement('#it1234', { prev: 'prev1234', el: detachedElement });
+		$('.button-remove').click( function() {
+			var jqThis = $(this);
 
-			undoManager.add({
-				undo: function() {
-					var cont = removeElement('#it1234');
-					cont.el.insertAfter($('#prev1234'));
-				},
-				redo: function() {
-					var detachedElement1 = $('#it1234').detach();
-					addElement('#it1234', { prev: 'prev1234', el: detachedElement1 });
-				}
-			});
+			var insertElement = function() {
+				var cont = getElement();
+				cont.el.insertAfter($('#' + cont.prev));
+			};
+
+			var extractElement = function() {
+				var parent = jqThis.parent();
+				parent.removeClass( "hovered-highlight" );
+
+				var prevId = parent.prev().attr('id');
+				var detachedElement = parent.detach();
+				addElement({ prev: prevId, el: detachedElement });
+			};
+
+			extractElement();
+
+			undoManager.add({ undo: insertElement, redo: extractElement	});
 		});
 	});
 </script>
