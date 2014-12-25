@@ -119,8 +119,8 @@
 				<li>
 					<div>
 						<div class="btn-group">
-							<button type="button" class="btn btn-default navbar-btn undo-button">Ондо</button>
-							<button type="button" class="btn btn-default navbar-btn redo-button">Редо</button>
+							<button type="button" class="btn btn-default navbar-btn undo-button" disabled>Ондо</button>
+							<button type="button" class="btn btn-default navbar-btn redo-button" disabled>Редо</button>
 						</div>
 						<a href="http://splinterbike.ibochy.tk" target="_blank">
 							<button type="button" class="btn btn-default navbar-btn">Опубликовать</button></a>
@@ -459,16 +459,41 @@
 			return elements.pop();
 		};
 
-		$(".undo-button").click(function () {
+		$('.undo-button').click(function () {
 			undoManager.undo();
+			$(this).blur();
+
+			if(undoManager.hasRedo()) {
+				$('.redo-button').removeAttr('disabled');
+			} else {
+				$('.redo-button').attr('disabled', 'disabled');
+			}
+			if(undoManager.hasUndo()) {
+				$('.undo-button').removeAttr('disabled');
+			} else {
+				$('.undo-button').attr('disabled', 'disabled');
+			}
 		});
 
-		$(".redo-button").click(function () {
+		$('.redo-button').click(function () {
 			undoManager.redo();
+			$(this).blur();
+
+			if(undoManager.hasRedo()) {
+				$('.redo-button').removeAttr('disabled');
+			} else {
+				$('.redo-button').attr('disabled', 'disabled');
+			}
+
+			if(undoManager.hasUndo()) {
+				$('.undo-button').removeAttr('disabled');
+			} else {
+				$('.undo-button').attr('disabled', 'disabled');
+			}
 		});
 
 		$('.button-remove').click( function() {
-			var jqThis = $(this);
+			var jqButtonRemove = $(this);
 
 			var insertElement = function() {
 				var cont = getElement();
@@ -476,17 +501,29 @@
 			};
 
 			var extractElement = function() {
-				var parent = jqThis.parent();
-				parent.removeClass( "hovered-highlight" );
+				if(undoManager.hasUndo()) {
+					$('.undo-button').removeAttr('disabled');
+				} else {
+					$('.undo-button').attr('disabled', 'disabled');
+				}
+
+				if(undoManager.hasRedo()) {
+					$('.redo-button').removeAttr('disabled');
+				} else {
+					$('.redo-button').attr('disabled', 'disabled');
+				}
+
+				var parent = jqButtonRemove.parent();
+				parent.removeClass('hovered-highlight');
 
 				var prevId = parent.prev().attr('id');
 				var detachedElement = parent.detach();
 				addElement({ prev: prevId, el: detachedElement });
 			};
 
-			extractElement();
-
 			undoManager.add({ undo: insertElement, redo: extractElement	});
+
+			extractElement();
 		});
 	});
 </script>
