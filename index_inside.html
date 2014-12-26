@@ -411,10 +411,10 @@
 	$(function() {
 		$( ".hover-mark" ).hover(
 			function() {
-				$( this ).addClass( "hovered-highlight" );
+				$(this).addClass( "hovered-highlight" );
 				$(this).children('.button-remove').first().show();
 			}, function() {
-				$( this ).removeClass( "hovered-highlight" );
+				$(this).removeClass( "hovered-highlight" );
 				$(this).children('.button-remove').first().hide();
 			}
 		);
@@ -459,61 +459,42 @@
 			return elements.pop();
 		};
 
+		var toggle = function(el, pred) {
+			if(pred()) {
+				el.removeAttr('disabled');
+			} else {
+				el.attr('disabled', 'disabled');
+			}
+		};
+
+		var undoRedoOnOff = function() {
+			toggle($('.undo-button'), undoManager.hasUndo);
+			toggle($('.redo-button'), undoManager.hasRedo);
+		}
+
+		undoManager.setCallback(undoRedoOnOff);
+
 		$('.undo-button').click(function () {
 			undoManager.undo();
 			$(this).blur();
-
-			if(undoManager.hasRedo()) {
-				$('.redo-button').removeAttr('disabled');
-			} else {
-				$('.redo-button').attr('disabled', 'disabled');
-			}
-			if(undoManager.hasUndo()) {
-				$('.undo-button').removeAttr('disabled');
-			} else {
-				$('.undo-button').attr('disabled', 'disabled');
-			}
 		});
 
 		$('.redo-button').click(function () {
 			undoManager.redo();
 			$(this).blur();
-
-			if(undoManager.hasRedo()) {
-				$('.redo-button').removeAttr('disabled');
-			} else {
-				$('.redo-button').attr('disabled', 'disabled');
-			}
-
-			if(undoManager.hasUndo()) {
-				$('.undo-button').removeAttr('disabled');
-			} else {
-				$('.undo-button').attr('disabled', 'disabled');
-			}
 		});
 
 		$('.button-remove').click( function() {
-			var jqButtonRemove = $(this);
-
 			var insertElement = function() {
 				var cont = getElement();
 				cont.el.insertAfter($('#' + cont.prev));
 			};
 
+			var buttonRemove = $(this);
+			buttonRemove.hide();
+
 			var extractElement = function() {
-				if(undoManager.hasUndo()) {
-					$('.undo-button').removeAttr('disabled');
-				} else {
-					$('.undo-button').attr('disabled', 'disabled');
-				}
-
-				if(undoManager.hasRedo()) {
-					$('.redo-button').removeAttr('disabled');
-				} else {
-					$('.redo-button').attr('disabled', 'disabled');
-				}
-
-				var parent = jqButtonRemove.parent();
+				var parent = buttonRemove.parent();
 				parent.removeClass('hovered-highlight');
 
 				var prevId = parent.prev().attr('id');
@@ -521,9 +502,9 @@
 				addElement({ prev: prevId, el: detachedElement });
 			};
 
-			undoManager.add({ undo: insertElement, redo: extractElement	});
-
 			extractElement();
+
+			undoManager.add({ undo: insertElement, redo: extractElement	});
 		});
 	});
 </script>
