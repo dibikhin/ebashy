@@ -27,6 +27,15 @@
 				cursor: move;
 			}
 
+			.noselect {
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+
 			/* [class*="col-"] { border: 1px dotted red; } */
 
 		</style>
@@ -117,7 +126,7 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-left">
 				<li>
-					<div>
+					<div class="noselect">
 						<div class="btn-group">
 							<button type="button" class="btn btn-default navbar-btn undo-button" disabled>Ондо</button>
 							<button type="button" class="btn btn-default navbar-btn redo-button" disabled>Редо</button>
@@ -205,6 +214,7 @@
 
 	<!-- No bolts -->
 	<div class="row sortable connectedSortable" style="min-height: 100px;">
+		<div id="mjuedc8743"></div>
 		<div id="bgtrfv4321" class="col-md-2 hover-mark" style="min-height: 100px;"></div>
 		<div id="okmnji1234" class="col-md-4 hover-mark" style="min-height: 100px; ">
 			<span class="label label-danger button-remove"
@@ -226,11 +236,13 @@
 				style="cursor: pointer; display: none; float: right; padding: 10px; margin: 10px; font-size: 12px; ">
 					Удалить</span>
 			<h1 class="content-editable">Let's get it started</h1>
-			<p class="content-editable">
-				Another casual bla-bla-bla</p>
+			<p class="content-editable">Many years of&nbsp;woodworking experience have enabled me&nbsp;to&nbsp;make a&nbsp;bet
+				with a&nbsp;friend and end up&nbsp;developing something that will ultimately set a&nbsp;land speed record
+				for wooden bicycles. It&rsquo;s a&nbsp;testament to&nbsp;the versatility and strength of&nbsp;one of&nbsp;mankind&rsquo;s
+				oldest available materials... and of&nbsp;course, modern glue technology.</p>
 		</div>
-		<div class="col-md-2 hover-mark" style="min-height: 100px;"></div>
-		<div class="col-md-2 hover-mark" style="min-height: 100px;"></div>
+		<div id="wxdskj123" class="col-md-2 hover-mark" style="min-height: 100px;"></div>
+		<div id="trdwoy834" class="col-md-2 hover-mark" style="min-height: 100px;"></div>
 	</div>
 
 	<!-- Gallery -->
@@ -419,20 +431,6 @@
 			}
 		);
 
-		$( ".sortable" )
-			.sortable({
-				placeholder:	 "ui-state-highlight",
-				connectWith:	 ".connectedSortable",
-				tolerance:		 "pointer",
-				start: function( event, ui ) {
-				$( ".ui-state-highlight" )
-					.width( ui.item.width() )
-					.height( ui.item.height() )
-					.css( 'line-height', ui.item.height() + "px" ) // kill me ;)
-					.html('Бросить сюда');
-				}
-			});
-
 		$( ".content-editable" ).each( function () {
 			var ths = this;
 			$( ths )
@@ -506,7 +504,28 @@
 
 			undoManager.add({ undo: insertElement, redo: extractElement	});
 		});
+
+		$('#okmnji1234').mousedown(function() {
+			console.log($( this ).prev().attr('id'));
+		});
+
+		$( ".sortable" ).sortable({
+			cancel: '.button-remove',
+			placeholder: "ui-state-highlight",
+			connectWith: ".connectedSortable",
+			tolerance:	 "pointer",
+			start: function( event, ui ) {
+				$( ".ui-state-highlight" )
+					.width( ui.item.width() )
+					.height( ui.item.height() )
+					.css( 'line-height', ui.item.height() + "px" ) // kill me ;)
+					.html('Бросить сюда');
+			}
+		});
 	});
+
+// console.log
+
 </script>
 
 </body>
