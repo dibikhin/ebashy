@@ -505,9 +505,42 @@
 			undoManager.add({ undo: insertElement, redo: extractElement	});
 		});
 
-		$('#okmnji1234').mousedown(function() {
-			console.log($( this ).prev().attr('id'));
-		});
+		var prevMoves = [];
+		addPrevMove = function(id, prev_id) {
+			prevMoves.push({ id: id, prev_id: prev_id });
+		};
+
+		getPrevMove = function() {
+			return prevMoves.pop();
+		};
+
+		var nextMoves = [];
+		addNextMove = function(id, prev_id) {
+			nextMoves.push({ id: id, prev_id: prev_id });
+		};
+		getNextMove = function() {
+			return nextMoves.pop();
+		};
+
+		var moveToPrev = function() {
+			var zxcv1 = getPrevMove();
+			var el = $('#' + zxcv1.id);
+			var prev = el.prev();
+			var detachedEl = el.detach();
+
+			detachedEl.insertAfter($('#' + zxcv1.prev_id));
+			addNextMove(zxcv1.id, prev.attr('id'));
+		};
+
+		var moveToNext = function() {
+			var asdf = getNextMove();
+			var el = $('#' + asdf.id);
+			var prev = el.prev();
+			var detachedEl = el.detach();
+
+			detachedEl.insertAfter($('#' + asdf.prev_id));
+			addPrevMove(asdf.id, prev.attr('id'));
+		};
 
 		$( ".sortable" ).sortable({
 			cancel: '.button-remove',
@@ -515,6 +548,11 @@
 			connectWith: ".connectedSortable",
 			tolerance:	 "pointer",
 			start: function( event, ui ) {
+				var itemId = $( ui.item ).attr('id');
+				var prevItemId = $( ui.item ).prev().attr('id');
+				addPrevMove(itemId, prevItemId);
+				undoManager.add({undo: moveToPrev, redo: moveToNext });
+
 				$( ".ui-state-highlight" )
 					.width( ui.item.width() )
 					.height( ui.item.height() )
