@@ -542,22 +542,27 @@
 			addPrevMove(asdf.id, prev.attr('id'));
 		};
 
+		var tempItemId = null;		// global state = evil
+		var tempPrevItemId = null;
+
 		$( ".sortable" ).sortable({
 			cancel: '.button-remove',
 			placeholder: "ui-state-highlight",
 			connectWith: ".connectedSortable",
 			tolerance:	 "pointer",
 			start: function( event, ui ) {
-				var itemId = $( ui.item ).attr('id');
-				var prevItemId = $( ui.item ).prev().attr('id');
-				addPrevMove(itemId, prevItemId);
-				undoManager.add({undo: moveToPrev, redo: moveToNext });
+				tempItemId = $( ui.item ).attr('id');
+				tempPrevItemId = $( ui.item ).prev().attr('id');
 
 				$( ".ui-state-highlight" )
 					.width( ui.item.width() )
 					.height( ui.item.height() )
 					.css( 'line-height', ui.item.height() + "px" ) // kill me ;)
 					.html('Бросить сюда');
+			},
+			update: function(event, ui) {
+				addPrevMove(tempItemId, tempPrevItemId);
+				undoManager.add({undo: moveToPrev, redo: moveToNext });
 			}
 		});
 	});
